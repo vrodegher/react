@@ -18,7 +18,7 @@ const SearchParams = () => {
   const pets = results?.data?.pets ?? [];
 
   return (
-    <div className="bg-slate-300 p-4 rounded-md lg:w-1/2 sm:w-full ">
+    <div className="rounded-md bg-slate-300 p-4 sm:w-full lg:w-1/2 ">
       <form
         className="flex-col"
         onSubmit={(e) => {
@@ -32,19 +32,20 @@ const SearchParams = () => {
           setRequestParams(obj);
         }}
       >
-        <label htmlFor="location" className="block pb-2">
+        <label htmlFor="location">
           Location
           <input
-            className="pl-1 ml-1 rounded-sm"
+            type="text"
+            className="mb-5 block w-60"
             id="location"
             name="location"
             placeholder="Location"
           />
         </label>
-        <label htmlFor="animal" className="block pb-2">
+        <label htmlFor="animal">
           Animal
           <select
-            className="pl-1 ml-1 rounded-sm"
+            className="mb-5 block w-60"
             id="animal"
             name="animal"
             onChange={(e) => {
@@ -62,10 +63,10 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        <label htmlFor="breed" className="block pb-4">
+        <label htmlFor="breed">
           Breed
           <select
-            className="pl-1 ml-1 rounded-sm"
+            className="mb-5 block w-60"
             id="breed"
             disabled={!breeds.length}
             name="breed"
@@ -78,7 +79,7 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        <button className="w-fit font-semibold text-gray-800 bg-slate-400 shadow-md hover:shadow-sm rounded-md py-1 px-2">
+        <button className="w-fit rounded-md bg-slate-400 py-1 px-2 font-semibold text-gray-800 shadow-md hover:shadow-sm">
           Submit
         </button>
       </form>

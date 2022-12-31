@@ -17,17 +17,19 @@ const queryClient = new QueryClient({
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <header className="w-full py-8 text-center font-bold text-pink-600 text-2xl">
-          <Link to="/">Adopt Me!</Link>
-        </header>
-        <Routes>
-          <Route path="/" element={<SearchParams />} />
-          <Route path="/details/:id" element={<Details />} />
-        </Routes>
-      </QueryClientProvider>
-    </BrowserRouter>
+    <div className="m-0 p-0">
+      <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+          <header className="w-full py-8 text-center text-2xl font-bold text-pink-600">
+            <Link to="/">Adopt Me!</Link>
+          </header>
+          <Routes>
+            <Route path="/" element={<SearchParams />} />
+            <Route path="/details/:id" element={<Details />} />
+          </Routes>
+        </QueryClientProvider>
+      </BrowserRouter>
+    </div>
   );
 };
 
